@@ -4,7 +4,7 @@ html(lang='en')
     title='Roostagram!'
     meta('charset=UTF-8')
     meta(name='viewport', content='width=device-width,initial-scale=1')
-    link(href='/app.css', rel='stylesheet', type='text/css', media='all')
+    link(href='app.css', rel='stylesheet', type='text/css', media='all')
     //if lt IE 9
       script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
   body
@@ -12,4 +12,4 @@ html(lang='en')
     if target === 'dev'
       script(data-main="/src/requirejs/config", src="/bower_components/requirejs/require.js")
     else
-      script(src="/app.js")
+      script(src="app.js")
