@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roost Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/grunt-mocha/node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <div id="test">
+  </div>
+
+  <script src="../bower_components/requirejs/require.js"></script>
+
+  <script>
+
+    require(['lib/testRunner'], function(testRunner) {
+
+      testRunner([
+      ]);
+
+    });
+
+  </script>
+
+</body>
+</html>

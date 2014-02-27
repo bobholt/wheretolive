@@ -1,0 +1,19 @@
+{
+  "name": "wheretolive",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.6",
+    "almond": "~0.2.5"
+  },
+  "dependencies": {
+    "Leaflet": "git@github.com:Leaflet/Leaflet.git#~0.7.2",
+    "jquery": "~2.0.3",
+    "normalize-css": "~2.1.3"
+  }
+}
