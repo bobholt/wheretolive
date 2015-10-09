@@ -3,6 +3,7 @@ define(function(require) {
   'use strict';
 
   var L = require('leaflet');
+  require('stamen');
 
   // Data
   var airportData = require('airports/airports');
@@ -22,6 +23,9 @@ define(function(require) {
   var trainsData = require('transportation/trains');
   var farmersMarketsData = require('shopping/farmersmarkets');
 
+  var oneHour = require('distances/one-hour');
+  var twoHour = require('distances/two-hour');
+
   var map = null;
 
   var trainIcon = L.icon({
@@ -40,6 +44,8 @@ define(function(require) {
   });
 
   var trainRoute = [];
+  var twoHourLine = [];
+  var oneHourLine = [];
 
   function initmap() {
 
@@ -57,13 +63,15 @@ define(function(require) {
     var scienceHistory = null;
     var trainsArr = [];
     var trains = null;
+    var hoursArr = [];
+    var hours = null;
 
     var overlayMaps = {};
 
     // create the tile layer with correct attribution
-    var osmUrl='http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png';
-    var osmAttrib='Data, imagery and map information provided by MapQuest, <a href="http://www.openstreetmap.org/">Open Street Map</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> .';
-    var osm = new L.TileLayer(osmUrl, {
+    // var osmUrl='http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png';
+    var osmAttrib='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
+    var osm = new L.StamenTileLayer('terrain', {
       minZoom: 3,
       maxZoom: 18,
       opacity: 0.5,
@@ -105,6 +113,32 @@ define(function(require) {
     trains = L.layerGroup(trainsArr);
 
     overlayMaps['Amtrak'] = trains;
+
+    twoHour.forEach(function(elem) {
+      var latlng = L.latLng(elem.lat, elem.lng);
+
+      twoHourLine.push(latlng);
+    });
+
+    oneHour.forEach(function(elem) {
+      var latlng = L.latLng(elem.lat, elem.lng);
+
+      oneHourLine.push(latlng);
+    });
+
+    hoursArr.push(L.polyline(twoHourLine, {
+      color: '#F00',
+      weight: 2
+    }));
+
+    hoursArr.push(L.polyline(oneHourLine, {
+      color: '#00F',
+      weight: 2
+    }));
+
+    hours = L.layerGroup(hoursArr);
+
+    overlayMaps['DriveTime'] = hours;
 
     democratic.forEach(function(elem){
       schoolsArr.push(mapCircle(elem, 10, '#377eb8', false));
@@ -155,9 +189,9 @@ define(function(require) {
     overlayMaps['Science &amp; History'] = scienceHistory;
 
     map = new L.Map('map', {
-      center: [43.116, -70.966],
+      center: [43.388, -71.248],
       zoom: 8,
-      layers: [osm, airports, trains, arts, nature, schools, scienceHistory]
+      layers: [osm]
     });
 
     L.control.layers(null, overlayMaps).addTo(map);

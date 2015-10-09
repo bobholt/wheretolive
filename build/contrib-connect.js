@@ -28,7 +28,7 @@ module.exports = function(grunt) {
     },
     dev: {
       options: {
-        base: ['prod', '.', 'bower_components/Leaflet/dist'],
+        base: ['prod', '.', 'bower_components/Leaflet/dist', 'src/img'],
       }
     },
     prod: {

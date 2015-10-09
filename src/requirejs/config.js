@@ -9,9 +9,11 @@ require.config({
   paths: {
     'jquery': 'bower_components/jquery/jquery',
     'leaflet': 'bower_components/Leaflet/dist/leaflet-src',
+    'stamen': 'lib/tile.stamen',
 
     'airports': 'src/modules/airports',
     'arts': 'src/modules/arts',
+    'distances': 'src/modules/distances',
     'nature': 'src/modules/nature',
     'schools': 'src/modules/schools',
     'science-history': 'src/modules/science-history',
@@ -27,6 +29,10 @@ require.config({
   shim: {
     'leaflet': {
       exports: 'Leaflet'
+    },
+    'stamen': {
+      deps: ['leaflet'],
+      exports: 'stamen'
     }
   }
 

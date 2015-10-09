@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title='Roostagram!'
+    title='Where To Live'
     meta('charset=UTF-8')
     meta(name='viewport', content='width=device-width,initial-scale=1')
     link(href='app.css', rel='stylesheet', type='text/css', media='all')
@@ -9,6 +9,7 @@ html(lang='en')
       script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
   body
     div#map(role='main')
+      script(src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4")
     if target === 'dev'
       script(data-main="/src/requirejs/config", src="/bower_components/requirejs/require.js")
     else

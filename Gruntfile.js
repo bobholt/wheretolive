@@ -11,7 +11,7 @@ module.exports = function(grunt) {
   // Register alias tasks.
   grunt.registerTask('build',
     'Build site files for testing or deployment.',
-    ['jshint', 'mocha', 'clean', 'jade:prod', 'requirejs:prod', 'stylus:prod', 'copy:prod', 'buildGhPages:prod']);
+    ['jshint', 'mocha', 'clean', 'jade:prod', 'requirejs:prod', 'stylus:prod', 'copy:prod']);
 
   grunt.registerTask('dev',
     'Start a live-reloading dev webserver on localhost.',

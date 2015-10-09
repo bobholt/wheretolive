@@ -1,72 +1,46 @@
 define(function(require) {
 
-  return [{
-    name: 'Hilltop Montessori School',
-    location: 'Brattleboro, VT',
-    url: 'http://www.hilltopmontessori.org/',
-    lat: '42.837',
-    lng: '-72.588'
-  }, {
-    name: 'The Cornerstone School',
-    location: 'Stratham, NH',
-    url: 'http://cornerstoneschool.org/',
-    lat: '43.025',
-    lng: '-70.866'
-  }, {
-    name: 'Country Village Montessori School',
-    location: 'Amherst, NH',
-    url: 'http://countryvillagemontessori.com/',
-    lat: '42.823',
-    lng: '-71.608'
-  }, {
-    name: 'Meeting House Montessori School',
-    location: 'Bow, NH',
-    url: 'http://meetinghousemontessori.com/',
-    lat: '43.163',
-    lng: '-71.537'
-  }, {
-    name: 'The Montessori Children\'s School',
-    location: 'Etna, NH',
-    url: 'http://www.montessorihanovernh.org/',
-    lat: '43.706',
-    lng: '-72.234'
-  }, {
-    name: 'Brixham Montessori Friends School',
-    location: 'York, ME',
-    url: 'http://brixham.earthhost.biz/',
-    lat: '43.147',
-    lng: '-70.680'
-  }, {
-    name: 'Childlight Montessori School, Inc.',
-    location: 'Berwick, ME',
-    url: 'http://www.childlightmontessori.org/',
-    lat: '43.257',
-    lng: '-70.789'
-  }, {
+  return [
+
+  /* Over 2 hours away */
+  {
     name: 'Children\'s House Montessori School',
     location: 'Camden, ME',
     url: 'http://www.camdenmontessori.org/',
     lat: '44.208',
     lng: '-69.068'
-  }, {
+  },
+  {
     name: 'Damariscotta Montessori School',
     location: 'Nobleboro, ME',
     url: 'http://www.damariscottamontessori.org/',
     lat: '44.085',
     lng: '-69.477'
-  }, {
+  },
+  {
     name: 'Kennebec Montessori School',
     location: 'Fairfield, ME',
     url: 'http://www.kennebecmontessori.org/',
     lat: '44.590',
     lng: '-69.623'
-  }, {
-    name: 'Winfield Children\'s House',
-    location: 'Falmouth, ME',
-    url: 'http://www.winfieldhouse.net/',
-    lat: '43.763',
-    lng: '-70.276'
-  }, {
+  },
+  {
+    name: "Children's House of Nantucket ",
+    location: "Nantucket, MA",
+    url: "http://www.mchnantucket.org",
+    lat: "41.268",
+    lng: "-70.105"
+  },
+  {
+    name: "Vineyard Montessori School ",
+    location: "Vineyard Haven, MA",
+    url: "http://www.vineyardmontessori.com",
+    lat: "41.452",
+    lng: "-70.603"
+  },
+
+  /* Massachusetts */
+  {
     name: "Acton Montessori School ",
     location: "Acton, MA",
     url: "http://www.actonmontessori.com",
@@ -120,13 +94,8 @@ define(function(require) {
     url: "http://www.childrenshousemontessoriwrox.com",
     lat: "42.287",
     lng: "-71.157"
-  }, {
-    name: "Children's House of Nantucket ",
-    location: "Nantucket, MA",
-    url: "http://www.mchnantucket.org",
-    lat: "41.268",
-    lng: "-70.105"
-  }, {
+  },
+  {
     name: "Copper Beech Montessori School ",
     location: "Jamaica Plain, MA",
     url: "http://www.CopperBeechMontessori.com",
@@ -294,13 +263,8 @@ define(function(require) {
     url: "http://www.cpsd.us/tob/",
     lat: "42.384",
     lng: "-71.140"
-  }, {
-    name: "Vineyard Montessori School ",
-    location: "Vineyard Haven, MA",
-    url: "http://www.vineyardmontessori.com",
-    lat: "41.452",
-    lng: "-70.603"
-  }, {
+  },
+  {
     name: "Walnut Park Montessori School ",
     location: "Newton, MA",
     url: "http://www.walnutparkmontessori.org",
@@ -330,6 +294,60 @@ define(function(require) {
     url: "http://www.woodsideacademy.com",
     lat: "42.144",
     lng: "-71.368"
-  }];
+  },
+
+  {
+    name: 'Hilltop Montessori School',
+    location: 'Brattleboro, VT',
+    url: 'http://www.hilltopmontessori.org/',
+    lat: '42.837',
+    lng: '-72.588'
+  }, {
+    name: 'The Cornerstone School',
+    location: 'Stratham, NH',
+    url: 'http://cornerstoneschool.org/',
+    lat: '43.025',
+    lng: '-70.866'
+  }, {
+    name: 'Country Village Montessori School',
+    location: 'Amherst, NH',
+    url: 'http://countryvillagemontessori.com/',
+    lat: '42.823',
+    lng: '-71.608'
+  }, {
+    name: 'Meeting House Montessori School',
+    location: 'Bow, NH',
+    url: 'http://meetinghousemontessori.com/',
+    lat: '43.163',
+    lng: '-71.537'
+  },
+  {
+    name: 'The Montessori Children\'s School',
+    location: 'Etna, NH',
+    url: 'http://www.montessorihanovernh.org/',
+    lat: '43.706',
+    lng: '-72.234'
+  },
+  {
+    name: 'Brixham Montessori Friends School',
+    location: 'York, ME',
+    url: 'http://brixham.earthhost.biz/',
+    lat: '43.147',
+    lng: '-70.680'
+  }, {
+    name: 'Childlight Montessori School, Inc.',
+    location: 'Berwick, ME',
+    url: 'http://www.childlightmontessori.org/',
+    lat: '43.257',
+    lng: '-70.789'
+  },
+  {
+    name: 'Winfield Children\'s House',
+    location: 'Falmouth, ME',
+    url: 'http://www.winfieldhouse.net/',
+    lat: '43.763',
+    lng: '-70.276'
+  }
+  ];
 
 });
